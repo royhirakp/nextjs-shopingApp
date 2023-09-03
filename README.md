@@ -1,0 +1,2 @@
+# nextjs-shopingApp
+for practice
