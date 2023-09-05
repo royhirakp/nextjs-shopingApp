@@ -6,9 +6,5 @@ export default function DashboardLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <Box>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </Box>
-  );
+  return <Box>{children}</Box>;
 }

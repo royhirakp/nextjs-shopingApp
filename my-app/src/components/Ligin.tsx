@@ -32,8 +32,32 @@ const UserBox = styled(Box)(({ theme }) => ({
   },
 }));
 
-const TypographyA = styled(Typography)(({ theme }) => ({
-  color: "red",
+const NewButton = styled(Button)(({ theme }) => ({
+  textTransform: "none",
+  color: "white",
+
+  [theme.breakpoints.up("xs")]: {
+    fontSize: "50%",
+    width: "50px",
+    "&.MuiButton-contained": {
+      backgroundColor: "red",
+    },
+  },
+
+  [theme.breakpoints.up("sm")]: {
+    width: "70px",
+    fontSize: "70%",
+    "&.MuiButton-contained": {
+      backgroundColor: "blue",
+    },
+  },
+  [theme.breakpoints.up("md")]: {
+    width: "80px",
+    fontSize: "85%",
+    "&.MuiButton-contained": {
+      backgroundColor: "green",
+    },
+  },
 }));
 
 const Ligin = () => {
@@ -43,7 +67,6 @@ const Ligin = () => {
     width: 280,
     margin: "20px auto",
   };
-  const btnstyle = { margin: "8px 0" };
 
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -92,15 +115,9 @@ const Ligin = () => {
             label="Password"
           />
         </FormControl>
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
-          style={btnstyle}
-          fullWidth
-        >
+        <NewButton type="submit" color="primary" variant="contained" fullWidth>
           Sign in
-        </Button>
+        </NewButton>
       </Paper>
     </Box>
   );
