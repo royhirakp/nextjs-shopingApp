@@ -14,7 +14,36 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
-const SingupForm = () => {
+interface RegTextFieldProps {
+  name: string;
+  placeholder: string;
+}
+
+const RegTextFild: React.FC<RegTextFieldProps> = ({ name, placeholder }) => {
+  return (
+    <>
+      <TextField
+        sx={{
+          marginBottom: "5px",
+        }}
+        label={name}
+        placeholder={placeholder}
+        fullWidth
+        required
+      />
+    </>
+  );
+};
+
+interface PasswordTextFieldProps {
+  name: string;
+  label: string;
+}
+
+const PasswordTextField: React.FC<PasswordTextFieldProps> = ({
+  name,
+  label,
+}) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -24,64 +53,47 @@ const SingupForm = () => {
   ) => {
     event.preventDefault();
   };
+  return (
+    <>
+      <FormControl fullWidth variant="outlined" sx={{}}>
+        <InputLabel htmlFor="outlined-adornment-password">{name}</InputLabel>
+        <OutlinedInput
+          id="outlined-adornment-password"
+          type={showPassword ? "text" : "password"}
+          endAdornment={
+            <InputAdornment position="end">
+              <IconButton
+                aria-label="toggle password visibility"
+                onClick={handleClickShowPassword}
+                onMouseDown={handleMouseDownPassword}
+                edge="end"
+              >
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          }
+          label={label}
+        />
+      </FormControl>
+    </>
+  );
+};
 
+const SingupForm = () => {
   return (
     <>
       <Stack alignItems="center" m="2% 0 5% 0" justifyContent="center">
         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        <h3>Login</h3>
+        <h3>Sing up</h3>
       </Stack>
 
       <Stack justifyContent="center" m="0 0 2% 0" alignItems="center">
-        <TextField
-          sx={{
-            marginBottom: "5px",
-          }}
-          label="Name"
-          placeholder="Enter your name"
-          fullWidth
-          required
-        />
-        <TextField
-          sx={{
-            marginBottom: "5px",
-          }}
-          label="Emial"
-          placeholder="Enter Email"
-          fullWidth
-          required
-        />
-        <TextField
-          sx={{
-            marginBottom: "5px",
-          }}
-          label="Phone Number"
-          placeholder="Enter Phone no"
-          fullWidth
-          required
-        />
-        <FormControl fullWidth variant="outlined" sx={{}}>
-          <InputLabel htmlFor="outlined-adornment-password">
-            Password
-          </InputLabel>
-          <OutlinedInput
-            id="outlined-adornment-password"
-            type={showPassword ? "text" : "password"}
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label="toggle password visibility"
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
+        <RegTextFild name="Name" placeholder="Enter name" />
+        <RegTextFild name="Email" placeholder="Enter email" />
+        <RegTextFild name="Moile" placeholder="enter mobile no" />
+
+        <PasswordTextField name="password" label="password" />
+        <PasswordTextField name="re enter password" label="re enter password" />
 
         <Button
           sx={{
@@ -94,7 +106,7 @@ const SingupForm = () => {
           variant="contained"
           fullWidth
         >
-          Sign in
+          Sign up
         </Button>
       </Stack>
     </>
