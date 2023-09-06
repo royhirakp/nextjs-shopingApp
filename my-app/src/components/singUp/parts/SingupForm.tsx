@@ -13,7 +13,7 @@ import {
   TextField,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-
+// interface
 interface RegTextFieldProps {
   name: string;
   placeholder: string;
@@ -34,6 +34,7 @@ const RegTextFild: React.FC<RegTextFieldProps> = ({ name, placeholder }) => {
     </>
   );
 };
+// interface
 
 interface PasswordTextFieldProps {
   name: string;
@@ -79,6 +80,7 @@ const PasswordTextField: React.FC<PasswordTextFieldProps> = ({
   );
 };
 
+// main component
 const SingupForm = () => {
   return (
     <>
