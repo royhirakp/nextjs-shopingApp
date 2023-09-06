@@ -1,9 +1,8 @@
-"use client";
-import React from "react";
-import Login from "../components/Login/Ligin";
+import Singup from "@/components/singUp/Singup";
 import { Box } from "@mui/material";
+import React from "react";
 
-export default function Home() {
+const page = () => {
   return (
     <Box
       sx={{
@@ -13,7 +12,9 @@ export default function Home() {
         height: "100%",
       }}
     >
-      <Login />
+      <Singup />
     </Box>
   );
-}
+};
+
+export default page;
