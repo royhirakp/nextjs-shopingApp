@@ -11,7 +11,6 @@ const Home = () => {
     <Box pt={6}>
       {/* header and nav bar / search bar */}
 
-      {/* <Header /> */}
       {/* button list  */}
       <ButtonList />
       {/* artical */}

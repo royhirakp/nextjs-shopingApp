@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+import { useRouter } from "next/navigation";
 import {
   Avatar,
   Button,
@@ -24,7 +24,7 @@ const RegTextFild: React.FC<RegTextFieldProps> = ({ name, placeholder }) => {
     <>
       <TextField
         sx={{
-          marginBottom: "5px",
+          marginBottom: "2%",
         }}
         label={name}
         placeholder={placeholder}
@@ -56,7 +56,7 @@ const PasswordTextField: React.FC<PasswordTextFieldProps> = ({
   };
   return (
     <>
-      <FormControl fullWidth variant="outlined" sx={{}}>
+      <FormControl fullWidth variant="outlined" sx={{ padding: "2% 0 2% 0" }}>
         <InputLabel htmlFor="outlined-adornment-password">{name}</InputLabel>
         <OutlinedInput
           id="outlined-adornment-password"
@@ -82,6 +82,7 @@ const PasswordTextField: React.FC<PasswordTextFieldProps> = ({
 
 // main component
 const SingupForm = () => {
+  const route = useRouter();
   return (
     <>
       <Stack alignItems="center" m="2% 0 5% 0" justifyContent="center">
@@ -99,6 +100,7 @@ const SingupForm = () => {
 
         <Button
           sx={{
+            paddingTop: "2%",
             "&.MuiButton-contained": {
               backgroundColor: "blue",
             },
@@ -107,6 +109,9 @@ const SingupForm = () => {
           color="primary"
           variant="contained"
           fullWidth
+          onClick={() => {
+            route.push("/login");
+          }}
         >
           Sign up
         </Button>

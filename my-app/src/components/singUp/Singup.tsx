@@ -1,6 +1,7 @@
 import { Paper } from "@mui/material";
 import React from "react";
 import SingupForm from "./parts/SingupForm";
+import ButtonList from "../Login/parts/ButtonList";
 
 const Singup = () => {
   return (
@@ -9,7 +10,8 @@ const Singup = () => {
       sx={{
         width: {
           xs: "95%",
-          sm: "43%",
+          sm: "80%",
+          md: "43%",
         },
         padding: {
           xs: "2%",
@@ -20,6 +22,7 @@ const Singup = () => {
       }}
     >
       <SingupForm />
+      <ButtonList />
     </Paper>
   );
 };
