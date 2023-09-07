@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-
+import { useRouter } from "next/navigation";
 import {
   Avatar,
   Button,
@@ -18,7 +18,11 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = React.useState(false);
+  const router = useRouter();
 
+  function handelLogin() {
+    router.push("/home");
+  }
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (
@@ -81,6 +85,7 @@ const LoginForm = () => {
           color="primary"
           variant="contained"
           fullWidth
+          onClick={handelLogin}
         >
           Sign in
         </Button>

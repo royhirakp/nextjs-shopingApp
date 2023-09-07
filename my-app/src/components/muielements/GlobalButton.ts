@@ -1,3 +1,4 @@
+"use client";
 import { Button, Stack, Typography, styled } from "@mui/material";
 export const NewButton = styled(Button)(({ theme }) => ({
   textTransform: "none",

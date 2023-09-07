@@ -3,6 +3,7 @@ import { Box, ThemeProvider } from "@mui/material";
 import { theme } from "../../theme/muiTheam";
 import Header from "../../components/home/parts/Header";
 import ButtonList from "../../components/home/parts/ButtonList";
+import Footer from "@/components/home/parts/Footer";
 export default function DashboardLayout({
   children,
 }: {
@@ -27,6 +28,7 @@ export default function DashboardLayout({
         }}
       >
         {children}
+        <Footer />
       </Box>
     </Box>
   );

@@ -1,10 +1,11 @@
 import React from "react";
 import Login from "../../components/Login/Ligin";
+import { Stack } from "@mui/material";
 const page = () => {
   return (
-    <div>
+    <Stack justifyContent="center" alignItems="center" height="100%">
       <Login />
-    </div>
+    </Stack>
   );
 };
 
