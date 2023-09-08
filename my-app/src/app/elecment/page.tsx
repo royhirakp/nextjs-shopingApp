@@ -9,7 +9,6 @@ const page = () => {
       <Box>
         <Stack spacing={2} direction="row">
           <Button
-            variant="text"
             sx={{
               textTransform: "none",
               width: {
@@ -18,42 +17,15 @@ const page = () => {
                 md: "auto",
               },
               fontSize: {
-                xs: "11px",
-                sm: "13px",
-                md: "15px",
+                xs: "13px",
+                sm: "15px",
+                md: "17px",
               },
               padding: "0",
               height: {
-                xs: "24px",
-                sm: "26px",
-                md: "28px",
-              },
-              "&.MuiButton-root": {
-                // backgroundColor: "red",S
-                // width: "10px",
-              },
-            }}
-          >
-            button
-          </Button>
-          <Button
-            sx={{
-              textTransform: "none",
-              width: {
-                xs: "auto",
-                sm: "auto",
-                md: "auto",
-              },
-              fontSize: {
-                xs: "8px",
-                sm: "10px",
-                md: "12px",
-              },
-              padding: "0",
-              height: {
-                xs: "22px",
-                sm: "24px",
-                md: "26px",
+                xs: "25px",
+                sm: "27px",
+                md: "29px",
               },
               "&.MuiButton-root": {
                 backgroundColor: "red",
