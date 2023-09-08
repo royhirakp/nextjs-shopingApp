@@ -18,15 +18,15 @@ const page = () => {
                 md: "auto",
               },
               fontSize: {
-                xs: "8px",
-                sm: "10px",
-                md: "12px",
+                xs: "11px",
+                sm: "13px",
+                md: "15px",
               },
               padding: "0",
               height: {
-                xs: "22px",
-                sm: "24px",
-                md: "26px",
+                xs: "24px",
+                sm: "26px",
+                md: "28px",
               },
               "&.MuiButton-root": {
                 // backgroundColor: "red",S
