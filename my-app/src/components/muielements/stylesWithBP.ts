@@ -24,10 +24,10 @@ export const button1 = {
 
 export const typoHeading1 = {
   fontSize: {
-    xs: "1.25rem", // Extra small screens (e.g., mobile phones)
-    sm: "1.65rem", // Small screens (e.g., tablets)
-    md: "1.95rem", // Medium screens (e.g., laptops)
-    lg: "2.15rem",
+    xs: "100%", // Extra small screens (e.g., mobile phones)
+    sm: "165%", // Small screens (e.g., tablets)
+    md: "155%", // Medium screens (e.g., laptops)
+    lg: "188%",
   },
 };
 

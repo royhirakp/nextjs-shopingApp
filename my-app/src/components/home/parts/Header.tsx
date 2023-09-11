@@ -22,6 +22,8 @@ import {
   typoText,
   typoHeading1,
 } from "@/components/muielements/stylesWithBP";
+import { LoginFormAvtar } from "@/components/muielements/stylesWithBP";
+
 // import { theme } from "@/app/home2/theme";
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -36,6 +38,7 @@ const Search = styled("div")(({ theme }) => ({
 
 const ButtonsList = () => {
   const router = useRouter();
+  const iconbuttonStyle = { padding: 0 };
   return (
     <Stack
       direction="row"
@@ -47,19 +50,32 @@ const ButtonsList = () => {
         },
       }}
     >
-      <IconButton aria-label="cart" onClick={() => router.push("/home/cart")}>
-        <ShoppingCartIcon />
+      <IconButton
+        aria-label="cart"
+        // sx={iconbuttonStyle}
+        onClick={() => router.push("/home/cart")}
+      >
+        <ShoppingCartIcon style={{ color: "#ffff" }} />
       </IconButton>
 
       <IconButton
         aria-label="profile"
+        // sx={iconbuttonStyle}
         onClick={() => router.push("/home/profile")}
       >
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+        <Avatar
+          // sx={{}}
+          alt="Remy Sharp"
+          src="https://mui.com/static/images/avatar/1.jpg"
+        />
       </IconButton>
 
-      <IconButton aria-label="profile" onClick={() => alert(" logout app")}>
-        <LogoutIcon />
+      <IconButton
+        // sx={iconbuttonStyle}
+        aria-label="profile"
+        onClick={() => alert(" logout app")}
+      >
+        <LogoutIcon style={{ color: "#ffff" }} />
       </IconButton>
     </Stack>
   );
@@ -70,25 +86,43 @@ const SearchBar = () => {
     <Search
       sx={{
         width: {
-          xs: "90%",
-          sm: "40%",
-          md: "35%",
+          xs: "60%",
+          sm: "30%",
+          md: "25%",
         },
         display: "flex",
         flexDirection: "row",
+        height: {
+          xs: "39%",
+          sm: "45%",
+          md: "50%",
+        },
       }}
     >
-      <IconButton aria-label="search" sx={{ padding: "1%" }}>
-        <SearchIcon />
+      <IconButton
+        aria-label="search"
+        sx={{
+          padding: "1%",
+        }}
+      >
+        <SearchIcon
+          sx={{
+            width: {
+              xs: "55%",
+              sm: "65%",
+              md: "75%",
+            },
+          }}
+        />
       </IconButton>
       <InputBase
-        // fullWidth
+        fullWidth
         sx={{
           fontSize: {
-            xs: "0.9rem", // Extra small screens (e.g., mobile phones)
-            sm: "1.1rem", // Small screens (e.g., tablets)
-            md: "1.3rem", // Medium screens (e.g., laptops)
-            lg: "1.4rem",
+            xs: "60%", // Extra small screens (e.g., mobile phones)
+            sm: "70%", // Small screens (e.g., tablets)
+            md: "80%", // Medium screens (e.g., laptops)
+            lg: "90%",
           },
         }}
         placeholder="search products.."
@@ -96,33 +130,54 @@ const SearchBar = () => {
     </Search>
   );
 };
-
+const MenuButtonAndLoGo = () => {
+  return (
+    <Box
+      sx={{
+        display: { xs: "block", sm: "none" },
+      }}
+    >
+      <IconButton>
+        <MenuIcon
+          sx={{
+            // display: { xs: "block", sm: "none" },
+            width: {
+              xs: "65%",
+              md: "80%",
+            },
+          }}
+        />
+      </IconButton>
+    </Box>
+  );
+};
 const Header = () => {
   return (
     <AppBar
       position="static"
-      sx={{ padding: "0 6% 0% 6%", position: "fixed", zIndex: "999" }}
+      sx={{
+        position: "fixed",
+        zIndex: "999",
+        padding: {
+          xs: "0",
+          md: "0 10% 0 10%",
+          backgroundColor: "cadetblue",
+        },
+      }}
     >
       <Stack>
         {/* make this flexxx */}
         <StyledToolbar>
-          <IconButton>
-            <MenuIcon
-              sx={{
-                display: { xs: "block", sm: "none" },
-                width: {
-                  xs: "65%",
-                  md: "80%",
-                },
-              }}
-            />
-          </IconButton>
-          <Typography
-            variant="h6"
-            sx={{ ...typoHeading1, display: { xs: "none", sm: "block" } }}
-          >
-            DAAA
-          </Typography>
+          <MenuButtonAndLoGo />
+
+          <Box>
+            <Typography
+              variant="h6"
+              sx={{ ...typoHeading1, display: { xs: "none", sm: "block" } }}
+            >
+              DAAA
+            </Typography>
+          </Box>
 
           <SearchBar />
 

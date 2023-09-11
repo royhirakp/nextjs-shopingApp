@@ -1,5 +1,5 @@
 "use client";
-import { Box, ThemeProvider } from "@mui/material";
+import { Box, Stack, ThemeProvider } from "@mui/material";
 import { theme } from "../../theme/muiTheam";
 import Header from "../../components/home/parts/Header";
 import ButtonList from "../../components/home/parts/ButtonList";
@@ -14,22 +14,35 @@ export default function DashboardLayout({
       <Box>
         <Header />
       </Box>
-      <Box
+      <Stack
         sx={{
-          boxSizing: "border-box",
-          padding: {
-            xs: "0 0.5% 0 0.5%",
-            sm: "0.5% 2% 0 2%",
-            md: "1% 4% 0 4%",
-            lg: "1% 5% 0 5%",
-            xl: "1% 6% 0 6%",
-          },
-          height: "100%",
+          backgroundColor: "rebeccapurple",
         }}
       >
-        {children}
-        <Footer />
-      </Box>
+        <Box
+          sx={{
+            boxSizing: "border-box",
+            border: "1px solid",
+            backgroundColor: "ActiveBorder",
+            height: "100%",
+            // width: {
+            //   xs: "90%",
+            //   sm: "90%",
+            //   md: "70%",
+            // },
+            margin: "0 auto 0 auto",
+            minWidth: {
+              xs: "100%",
+              sm: "100%",
+              md: "100%",
+              lg: "1000px",
+            },
+          }}
+        >
+          {children}
+        </Box>
+      </Stack>
+      <Footer />
     </Box>
   );
 }
