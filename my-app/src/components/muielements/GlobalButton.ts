@@ -3,7 +3,6 @@ import { Box, Button, Stack, Typography, styled } from "@mui/material";
 export const NewButton = styled(Button)(({ theme }) => ({
   textTransform: "none",
   color: "black",
-
   [theme.breakpoints.up("xs")]: {
     "&.MuiButton-contained": {
       backgroundColor: "red",

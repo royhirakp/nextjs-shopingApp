@@ -1,14 +1,16 @@
+"use client";
 import { Button, Stack, Typography, styled } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-import { NewButton, NewTypography } from "../../muielements/GlobalButton";
+import { NewButton } from "@/components/muielements/GlobalButton";
 const ButtonList = () => {
+  const [activeButtonStatus, setActiveButtonStatus] = useState(-1);
   return (
     <Stack
       spacing={2}
       direction="row"
       justifyContent="center"
-      pt={1}
+      pt={2.5}
       sx={{
         display: {
           xs: "none",
@@ -16,11 +18,52 @@ const ButtonList = () => {
         },
       }}
     >
-      <NewButton variant="text">Electronics</NewButton>
-      <NewButton variant="text">Books</NewButton>
-      <NewButton variant="text">grocery</NewButton>
-      <NewButton variant="text">Home appliences</NewButton>
-      <NewButton variant="text">Flights</NewButton>{" "}
+      {["Electronics", "Flights", "Home appliences", "grocery", "Books"].map(
+        (item, i) => {
+          return (
+            <Button
+              key={i * 0.02}
+              onClick={() => {
+                setActiveButtonStatus(i);
+              }}
+              sx={{
+                boxSizing: "border-box",
+                borderBottom: `${
+                  activeButtonStatus == i ? "2px solid" : "none"
+                }`,
+                textTransform: "none",
+                color: "black",
+                // width: {
+                //   xs: "5%",
+                //   sm: "7%",
+                //   md: "10%",
+                // },
+                fontSize: {
+                  xs: "55%",
+                  sm: "65%",
+                  md: "75%",
+                },
+              }}
+              variant="text"
+            >
+              {item}
+            </Button>
+          );
+        }
+      )}
+
+      {/* <NewButton sx={{ borderBottom: "2px solid" }} variant="text">
+        Books
+      </NewButton>
+      <NewButton sx={{ borderBottom: "2px solid" }} variant="text">
+        grocery
+      </NewButton>
+      <NewButton sx={{ borderBottom: "2px solid" }} variant="text">
+        Home appliences
+      </NewButton>
+      <NewButton sx={{ borderBottom: "2px solid" }} variant="text">
+        Flights
+      </NewButton>{" "} */}
     </Stack>
   );
 };

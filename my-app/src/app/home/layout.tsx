@@ -25,11 +25,11 @@ export default function DashboardLayout({
             border: "1px solid",
             backgroundColor: "ActiveBorder",
             height: "100%",
-            // width: {
-            //   xs: "90%",
-            //   sm: "90%",
-            //   md: "70%",
-            // },
+            width: {
+              xs: "90%",
+              sm: "90%",
+              md: "70%",
+            },
             margin: "0 auto 0 auto",
             minWidth: {
               xs: "100%",

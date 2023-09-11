@@ -1,23 +1,25 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Button, Box } from "@mui/material";
+// import item from "../../../../public/carsoules/Captur24e.PNG"
+const image = require("@/carsoules/Captur24e.PNG");
 const Cousoul = () => {
   var items = [
     {
       id: 1,
-      img: "https://cdn2.thecatapi.com/images/eer.jpg",
+      img: "/carsoules/Capture.PNG",
     },
     {
       id: 2,
-      img: "https://cdn2.thecatapi.com/images/de5.jpg",
+      img: "/carsoules/Capturle.PNG",
     },
     {
       id: 3,
-      img: "https://cdn2.thecatapi.com/images/b9u.jpg",
+      img: "/carsoules/Captur24e.PNG",
     },
     {
       id: 4,
-      img: "https://cdn2.thecatapi.com/images/1si.jpg",
+      img: "/carsoules/hCapture.PNG",
     },
   ];
 
