@@ -11,8 +11,17 @@ import {
   OutlinedInput,
   Stack,
   TextField,
+  Typography,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import {
+  typoText,
+  typoHeading1,
+  typoHeading2,
+  button1,
+  LoginFormAvtar,
+} from "@/components/muielements/stylesWithBP";
+
 // interface
 interface RegTextFieldProps {
   name: string;
@@ -86,8 +95,12 @@ const SingupForm = () => {
   return (
     <>
       <Stack alignItems="center" m="2% 0 5% 0" justifyContent="center">
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        <h3>Sing up</h3>
+        <Avatar
+          alt="Remy Sharp"
+          sx={LoginFormAvtar}
+          src="/static/images/avatar/1.jpg"
+        />
+        <Typography sx={typoHeading1}>Sing up</Typography>
       </Stack>
 
       <Stack justifyContent="center" m="0 0 2% 0" alignItems="center">

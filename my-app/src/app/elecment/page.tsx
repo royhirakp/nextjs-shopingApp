@@ -12,9 +12,9 @@ const page = () => {
             sx={{
               textTransform: "none",
               width: {
-                xs: "auto",
-                sm: "auto",
-                md: "auto",
+                xs: "66px",
+                sm: "70x",
+                md: "75px",
               },
               fontSize: {
                 xs: "13px",
@@ -23,9 +23,9 @@ const page = () => {
               },
               padding: "0",
               height: {
-                xs: "25px",
-                sm: "27px",
-                md: "29px",
+                xs: "26px",
+                sm: "28px",
+                md: "30px",
               },
               "&.MuiButton-root": {
                 backgroundColor: "red",
@@ -38,7 +38,7 @@ const page = () => {
           </Button>
         </Stack>
 
-        {/* <Box sx={{ width: "100%", maxWidth: 500 }}>
+        <Box sx={{ width: "100%", maxWidth: 500 }}>
           <Typography
             variant="h5"
             gutterBottom
@@ -102,7 +102,7 @@ const page = () => {
             consectetur, neque doloribus, cupiditate numquam dignissimos laborum
             fugiat deleniti? Eum quasi quidem quibusdam.
           </Typography>
-        </Box> */}
+        </Box>
       </Box>
     </div>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { Button, Stack, Typography, styled } from "@mui/material";
+import { Box, Button, Stack, Typography, styled } from "@mui/material";
 export const NewButton = styled(Button)(({ theme }) => ({
   textTransform: "none",
   color: "black",
@@ -37,5 +37,25 @@ export const NewTypography = styled(Typography)(({ theme }) => ({
   },
   [theme.breakpoints.up("lg")]: {
     fontSize: "170%",
+  },
+}));
+
+const Icons = styled(Box)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius,
+  display: "none",
+  alignItems: "center",
+  gap: "10px",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+  },
+}));
+
+const UserBox = styled(Box)(({ theme }) => ({
+  borderRadius: theme.shape.borderRadius,
+  display: "flex",
+  alignItems: "center",
+  gap: "2px",
+  [theme.breakpoints.up("sm")]: {
+    display: "none",
   },
 }));

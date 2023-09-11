@@ -16,8 +16,12 @@ import {
 import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import DrawarForMobile from "./DrawarForMobile";
 import MenuIcon from "@mui/icons-material/Menu";
+import {
+  typoHeading2,
+  typoText,
+  typoHeading1,
+} from "@/components/muielements/stylesWithBP";
 // import { theme } from "@/app/home2/theme";
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -30,29 +34,8 @@ const Search = styled("div")(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
 }));
 
-const Icons = styled(Box)(({ theme }) => ({
-  borderRadius: theme.shape.borderRadius,
-  display: "none",
-  alignItems: "center",
-  gap: "10px",
-  [theme.breakpoints.up("sm")]: {
-    display: "flex",
-  },
-}));
-
-const UserBox = styled(Box)(({ theme }) => ({
-  borderRadius: theme.shape.borderRadius,
-  display: "flex",
-  alignItems: "center",
-  gap: "2px",
-  [theme.breakpoints.up("sm")]: {
-    display: "none",
-  },
-}));
-
 const ButtonsList = () => {
   const router = useRouter();
-
   return (
     <Stack
       direction="row"
@@ -87,25 +70,28 @@ const SearchBar = () => {
     <Search
       sx={{
         width: {
-          xs: "50%",
-          sm: "60%",
-          md: "60%",
+          xs: "90%",
+          sm: "40%",
+          md: "35%",
         },
+        display: "flex",
+        flexDirection: "row",
       }}
     >
-      <IconButton aria-label="search" sx={{ padding: 0 }}>
-        <SearchIcon
-          sx={{
-            width: {
-              xs: "65%",
-              md: "80%",
-            },
-          }}
-        />
-      </IconButton>{" "}
+      <IconButton aria-label="search" sx={{ padding: "1%" }}>
+        <SearchIcon />
+      </IconButton>
       <InputBase
+        // fullWidth
+        sx={{
+          fontSize: {
+            xs: "0.9rem", // Extra small screens (e.g., mobile phones)
+            sm: "1.1rem", // Small screens (e.g., tablets)
+            md: "1.3rem", // Medium screens (e.g., laptops)
+            lg: "1.4rem",
+          },
+        }}
         placeholder="search products.."
-        sx={{ xs: "80%", md: "100%" }}
       />
     </Search>
   );
@@ -113,12 +99,17 @@ const SearchBar = () => {
 
 const Header = () => {
   return (
-    <AppBar position="static" sx={{ padding: "0 6% 0% 6%", position: "fixed" }}>
+    <AppBar
+      position="static"
+      sx={{ padding: "0 6% 0% 6%", position: "fixed", zIndex: "999" }}
+    >
       <Stack>
+        {/* make this flexxx */}
         <StyledToolbar>
           <IconButton>
             <MenuIcon
               sx={{
+                display: { xs: "block", sm: "none" },
                 width: {
                   xs: "65%",
                   md: "80%",
@@ -126,15 +117,15 @@ const Header = () => {
               }}
             />
           </IconButton>
-          {/* <DrawarForMobile /> */}
           <Typography
             variant="h6"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ ...typoHeading1, display: { xs: "none", sm: "block" } }}
           >
             DAAA
           </Typography>
 
           <SearchBar />
+
           <ButtonsList />
         </StyledToolbar>
       </Stack>

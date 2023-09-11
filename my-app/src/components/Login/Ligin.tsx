@@ -3,6 +3,10 @@ import React from "react";
 import { Paper } from "@mui/material";
 import ButtonList from "./parts/ButtonList";
 import LoginForm from "./parts/LoginForm";
+import {
+  NewButton,
+  NewTypography,
+} from "../../components/muielements/GlobalButton";
 
 const Ligin = () => {
   return (
@@ -11,8 +15,9 @@ const Ligin = () => {
       sx={{
         width: {
           xs: "95%",
-          sm: "80%",
-          md: "43%",
+          sm: "60%",
+          md: "45%",
+          lg: "32%",
         },
         padding: {
           xs: "2%",

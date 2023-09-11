@@ -15,7 +15,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
-
+import {
+  typoText,
+  typoHeading1,
+  typoHeading2,
+  LoginFormAvtar,
+} from "../../muielements/stylesWithBP";
 const LoginForm = () => {
   const [showPassword, setShowPassword] = React.useState(false);
   const router = useRouter();
@@ -33,8 +38,12 @@ const LoginForm = () => {
   return (
     <>
       <Stack alignItems="center" m="2% 0 5% 0" justifyContent="center">
-        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        <h3>Login</h3>
+        <Avatar
+          alt="Remy Sharp"
+          src="/static/images/avatar/1.jpg"
+          sx={LoginFormAvtar}
+        />
+        <Typography sx={typoHeading1}>Login</Typography>
       </Stack>
 
       <Stack justifyContent="center" m="0 0 2% 0" alignItems="center">
@@ -42,7 +51,20 @@ const LoginForm = () => {
           sx={{
             marginBottom: "5px",
           }}
-          label="Emial"
+          // inputProps={{
+          //   style: {
+          //     // height: "20px", // Change the height to your desired value
+          //     padding: "4%",
+          //     fontSize: "10px",
+          //   },
+          // }}
+          label={
+            <span
+            // style={{ fontSize: "10px", lineHeight: "10px" }}
+            >
+              Email
+            </span>
+          }
           placeholder="Enter Email"
           fullWidth
           required
@@ -69,7 +91,10 @@ const LoginForm = () => {
             label="Password"
           />
         </FormControl>
-        <Typography variant="body1" sx={{ width: "100%", textAlign: "end" }}>
+        <Typography
+          variant="body1"
+          sx={{ ...typoText, width: "100%", textAlign: "end" }}
+        >
           <Link href="#" underline="hover">
             {"Forget password ?"}
           </Link>
@@ -91,10 +116,12 @@ const LoginForm = () => {
         </Button>
       </Stack>
       <Stack spacing={0} direction="row">
-        <Typography variant="body1">don,t have an account?</Typography>
-        <Link href="singup" underline="hover">
-          {"Sing Up"}
-        </Link>
+        <Typography sx={typoText} variant="body1">
+          don,t have an account?
+          <Link href="singup" underline="hover">
+            {"Sing Up"}
+          </Link>
+        </Typography>
       </Stack>
     </>
   );
