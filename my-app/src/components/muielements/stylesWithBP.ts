@@ -1,10 +1,10 @@
 export const button1 = {
   textTransform: "none",
-  width: {
-    xs: "66px",
-    sm: "70x",
-    md: "75px",
-  },
+  // width: {
+  //   xs: "66px",
+  //   sm: "70x",
+  //   md: "75px",
+  // },
   fontSize: {
     xs: "13px",
     sm: "15px",

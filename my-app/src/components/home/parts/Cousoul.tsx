@@ -1,8 +1,6 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
-import { Paper, Button, Box } from "@mui/material";
-// import item from "../../../../public/carsoules/Captur24e.PNG"
-const image = require("@/carsoules/Captur24e.PNG");
+import { Paper, Box } from "@mui/material";
 const Cousoul = () => {
   var items = [
     {

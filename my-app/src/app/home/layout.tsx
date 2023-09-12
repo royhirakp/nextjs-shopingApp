@@ -12,18 +12,20 @@ export default function DashboardLayout({
   return (
     <Box>
       <Box>
+        {" "}
         <Header />
       </Box>
       <Stack
-        sx={{
-          backgroundColor: "rebeccapurple",
-        }}
+        sx={
+          {
+            // backgroundColor: "rebeccapurple",
+          }
+        }
       >
         <Box
           sx={{
             boxSizing: "border-box",
-            border: "1px solid",
-            backgroundColor: "ActiveBorder",
+            // backgroundColor: "ActiveBorder",
             height: "100%",
             width: {
               xs: "90%",

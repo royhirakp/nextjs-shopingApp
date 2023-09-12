@@ -30,6 +30,7 @@ const Home = () => {
                 return <ProductCard key={i * 0.25} />;
               }
             )}
+            <ProductCard />
           </Stack>
         </Box>
       </Stack>
