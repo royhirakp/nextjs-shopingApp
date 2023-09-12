@@ -173,7 +173,7 @@ const Header = () => {
         padding: {
           xs: "0",
           md: "0 10% 0 10%",
-          backgroundColor: "cadetblue",
+          backgroundColor: "#416d6f",
         },
       }}
     >

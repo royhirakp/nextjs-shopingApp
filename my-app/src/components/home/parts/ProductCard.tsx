@@ -68,7 +68,7 @@ const ProductCard = () => {
 
       <CardActions
         disableSpacing
-        sx={{ display: "flex", justifyContent: "space-between" }}
+        sx={{ display: "flex", justifyContent: "space-between", padding: 0 }}
       >
         <div>
           <IconButton aria-label="add to favorites" sx={{ padding: 0 }}>
