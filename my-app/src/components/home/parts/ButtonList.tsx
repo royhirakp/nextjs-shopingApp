@@ -33,11 +33,6 @@ const ButtonList = () => {
                 }`,
                 textTransform: "none",
                 color: "black",
-                // width: {
-                //   xs: "5%",
-                //   sm: "7%",
-                //   md: "10%",
-                // },
                 fontSize: {
                   xs: "55%",
                   sm: "65%",

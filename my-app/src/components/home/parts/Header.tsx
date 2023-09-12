@@ -12,6 +12,8 @@ import {
   Avatar,
   Stack,
   IconButton,
+  Divider,
+  Button,
 } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -24,6 +26,10 @@ import {
 } from "@/components/muielements/stylesWithBP";
 import { LoginFormAvtar } from "@/components/muielements/stylesWithBP";
 
+import Drawar from "./Drawar";
+interface MenuButtonAndLoGoProps {
+  handelFunction: () => void; // Define the type of the handleFunction prop
+}
 // import { theme } from "@/app/home2/theme";
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -130,14 +136,17 @@ const SearchBar = () => {
     </Search>
   );
 };
-const MenuButtonAndLoGo = () => {
+
+const MenuButtonAndLoGo: React.FC<MenuButtonAndLoGoProps> = ({
+  handelFunction,
+}) => {
   return (
     <Box
       sx={{
         display: { xs: "block", sm: "none" },
       }}
     >
-      <IconButton>
+      <IconButton onClick={handelFunction}>
         <MenuIcon
           sx={{
             // display: { xs: "block", sm: "none" },
@@ -152,6 +161,9 @@ const MenuButtonAndLoGo = () => {
   );
 };
 const Header = () => {
+  const [open, setOpen] = React.useState<
+    "top" | "left" | "bottom" | "right" | null
+  >(null);
   return (
     <AppBar
       position="static"
@@ -168,8 +180,38 @@ const Header = () => {
       <Stack>
         {/* make this flexxx */}
         <StyledToolbar>
-          <MenuButtonAndLoGo />
+          <MenuButtonAndLoGo handelFunction={() => setOpen("left")} />
 
+          <Drawar
+            title="DAAA"
+            position="left"
+            open={open === "left"}
+            onClose={() => setOpen(null)}
+          >
+            <Box>
+              <Typography>Menu Buttons</Typography>
+              <Divider />
+              <Stack direction="column" alignItems="baseline">
+                {[
+                  "Electronics",
+                  "Flights",
+                  "Home appliences",
+                  "grocery",
+                  "Books",
+                ].map((item, i) => {
+                  return (
+                    <Button
+                      sx={{ textTransform: "none" }}
+                      variant="text"
+                      key={i * 0.25}
+                    >
+                      {item}
+                    </Button>
+                  );
+                })}
+              </Stack>
+            </Box>
+          </Drawar>
           <Box>
             <Typography
               variant="h6"
@@ -178,9 +220,7 @@ const Header = () => {
               DAAA
             </Typography>
           </Box>
-
           <SearchBar />
-
           <ButtonsList />
         </StyledToolbar>
       </Stack>

@@ -85,9 +85,9 @@ const ProductCard = () => {
           sx={{
             textTransform: "none",
             fontSize: {
-              xs: "30%",
-              sm: "40%",
-              md: "70%",
+              xs: "45%",
+              sm: "50%",
+              md: "80%",
             },
             "&.MuiButton-root": {
               backgroundColor: "#d62a15",

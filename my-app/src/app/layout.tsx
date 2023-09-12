@@ -16,10 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        style={{ width: "100vw", height: "100vh" }}
-        className={inter.className}
-      >
+      <body style={{ width: "100vw" }} className={inter.className}>
         {/* <Box
           sx={{
             border: "1px solid black",

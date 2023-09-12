@@ -12,7 +12,6 @@ export default function DashboardLayout({
   return (
     <Box>
       <Box>
-        {" "}
         <Header />
       </Box>
       <Stack
@@ -26,7 +25,7 @@ export default function DashboardLayout({
           sx={{
             boxSizing: "border-box",
             // backgroundColor: "ActiveBorder",
-            height: "100%",
+            // height: "100%",
             width: {
               xs: "90%",
               sm: "90%",
