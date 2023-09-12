@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
@@ -55,7 +55,7 @@ const Footer = () => {
       >
         <FooterOptions />
       </Stack>
-      <Stack flex={1}>
+      <Stack flex={1} pr="2%">
         <FooterFollowButtonList />
       </Stack>
     </Stack>
@@ -132,10 +132,11 @@ const FooterFollowButtonList = () => {
       // flex={`${item.title === "follow us" ? 4 : 3}`}
       sx={{
         paddingLeft: {
-          xs: "0",
+          xs: "2%",
           sm: "3%",
           lg: "10%",
         },
+        color: "#ffff",
       }}
       justifyContent="center"
     >
@@ -167,14 +168,39 @@ const FooterFollowButtonList = () => {
             },
           }}
         >
-          {[
+          <IconButton
+            sx={{ padding: "0", color: "#ffff" }}
+            aria-label="linkedin"
+          >
+            <LinkedInIcon />
+          </IconButton>
+          <IconButton
+            sx={{ padding: "0", color: "#ffff" }}
+            aria-label="linkedin"
+          >
+            <TwitterIcon />
+          </IconButton>
+          <IconButton
+            sx={{ padding: "0", color: "#ffff" }}
+            aria-label="linkedin"
+          >
+            <InstagramIcon />
+          </IconButton>
+          <IconButton
+            sx={{ padding: "0", color: "#ffff" }}
+            aria-label="linkedin"
+          >
+            <FacebookIcon />
+          </IconButton>
+
+          {/* {[
             <LinkedInIcon />,
             <TwitterIcon />,
             <InstagramIcon />,
             <FacebookIcon />,
-          ].map((item, j) => {
+          ].map((Item, j) => {
             return (
-              <Typography
+              <Box
                 key={j * 0.05}
                 sx={{
                   fontSize: {
@@ -184,10 +210,10 @@ const FooterFollowButtonList = () => {
                   },
                 }}
               >
-                {item}
-              </Typography>
+                <Item/>
+              </Box>
             );
-          })}
+          })} */}
         </Stack>
       </Box>
     </Stack>
