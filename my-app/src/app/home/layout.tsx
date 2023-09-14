@@ -10,40 +10,35 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }) {
   return (
-    <Box>
+    <Stack minHeight="100vh">
       <Box>
         <Header />
       </Box>
-      <Stack
-        sx={
-          {
-            // backgroundColor: "rebeccapurple",
-          }
-        }
+      <Box
+        sx={{
+          boxSizing: "border-box",
+          width: {
+            xs: "90%",
+            sm: "90%",
+            md: "70%",
+          },
+          margin: "0 auto 0 auto",
+          minWidth: {
+            xs: "100%",
+            sm: "100%",
+            md: "100%",
+            lg: "1000px",
+          },
+        }}
       >
-        <Box
-          sx={{
-            boxSizing: "border-box",
-            // backgroundColor: "ActiveBorder",
-            // height: "100%",
-            width: {
-              xs: "90%",
-              sm: "90%",
-              md: "70%",
-            },
-            margin: "0 auto 0 auto",
-            minWidth: {
-              xs: "100%",
-              sm: "100%",
-              md: "100%",
-              lg: "1000px",
-            },
-          }}
-        >
-          {children}
+        <Box flex={1} sx={{ marginTop: "53px" }}>
+          <ButtonList />
         </Box>
-      </Stack>
-      <Footer />
-    </Box>
+        {children}
+      </Box>
+      <Box mt="auto">
+        <Footer />
+      </Box>
+    </Stack>
   );
 }

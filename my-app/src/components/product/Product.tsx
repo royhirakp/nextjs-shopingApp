@@ -15,8 +15,8 @@ import {
 } from "../../components/muielements/GlobalButton";
 const Product = () => {
   return (
-    <Box pt={8} border="1px solid" display="flex">
-      <Box width="40%">
+    <Box border="1px solid" display="flex">
+      {/* <Box width="40%">
         <Card sx={{ maxWidth: "100%", height: "100%" }}>
           <CardActionArea>
             <CardMedia
@@ -36,7 +36,20 @@ const Product = () => {
           <NewButton>Add to cart</NewButton>
           <NewButton> Buy Now</NewButton>
         </Stack>
-      </Box>
+      </Box> */}
+      <Stack direction="row">
+        <Stack flex={1} sx={{ backgroundColor: "green" }}>
+          <CardMedia
+            component="img"
+            height="140"
+            image="https://cdn2.thecatapi.com/images/bja.jpg"
+            alt="green iguana"
+          />
+        </Stack>
+        <Stack flex={2} sx={{ backgroundColor: "green" }}>
+          <Typography>heiiloo</Typography>
+        </Stack>
+      </Stack>
     </Box>
   );
 };

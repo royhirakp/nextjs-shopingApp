@@ -8,6 +8,8 @@ import Typography from "@mui/material/Typography";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import Ratting from "./Ratting";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/redux/slices/cartSlices";
 
 import { Button, Stack } from "@mui/material";
 const ProductCard = () => {
@@ -32,74 +34,107 @@ const ProductCard = () => {
         // width="5%"
         sx={{ borderRadius: "5%" }}
       />
-      <CardContent sx={{ padding: "0" }}>
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "65%",
-              sm: "90%",
-              md: "95%",
-            },
-            padding: "0",
-          }}
-          variant="body2"
-          color="text.secondary"
-        >
-          Product name with details
-        </Typography>
-
-        <Typography
-          sx={{
-            fontSize: {
-              xs: "60%",
-              sm: "85%",
-              md: "90%",
-            },
-            padding: "0",
-          }}
-          variant="body2"
-          color="text.secondary"
-        >
-          producr color
-        </Typography>
-      </CardContent>
+      <TextBox />
 
       <Ratting rate={4.5} count={"12"} />
-
-      <CardActions
-        disableSpacing
-        sx={{ display: "flex", justifyContent: "space-between", padding: 0 }}
-      >
-        <div>
-          <IconButton aria-label="add to favorites" sx={{ padding: 0 }}>
-            <FavoriteIcon sx={{ width: "58%" }} />
-          </IconButton>
-          <IconButton aria-label="share" sx={{ padding: 0 }}>
-            <ShareIcon sx={{ width: "58%" }} />
-          </IconButton>
-        </div>
-      </CardActions>
-      <Stack justifyContent="center">
-        <Button
-          variant="contained"
-          sx={{
-            textTransform: "none",
-            fontSize: {
-              xs: "45%",
-              sm: "50%",
-              md: "80%",
-            },
-            "&.MuiButton-root": {
-              backgroundColor: "#d62a15",
-              // width: "10px",
-            },
-          }}
-        >
-          <span>Add to Cart</span>
-        </Button>
-      </Stack>
+      <CardAction />
+      <ButtonContainer />
     </Card>
   );
 };
 
 export default ProductCard;
+
+const TextBox = () => {
+  return (
+    <CardContent sx={{ padding: "0" }}>
+      <Typography
+        sx={{
+          fontSize: {
+            xs: "65%",
+            sm: "90%",
+            md: "95%",
+          },
+          padding: "0",
+        }}
+        variant="body2"
+        color="text.secondary"
+      >
+        Product name with details
+      </Typography>
+
+      <Typography
+        sx={{
+          fontSize: {
+            xs: "60%",
+            sm: "85%",
+            md: "90%",
+          },
+          padding: "0",
+        }}
+        variant="body2"
+        color="text.secondary"
+      >
+        producr color
+      </Typography>
+    </CardContent>
+  );
+};
+
+const CardAction = () => {
+  return (
+    <CardActions
+      disableSpacing
+      sx={{ display: "flex", justifyContent: "space-between", padding: 0 }}
+    >
+      <div>
+        <IconButton aria-label="add to favorites" sx={{ padding: 0 }}>
+          <FavoriteIcon sx={{ width: "58%" }} />
+        </IconButton>
+        <IconButton aria-label="share" sx={{ padding: 0 }}>
+          <ShareIcon sx={{ width: "58%" }} />
+        </IconButton>
+      </div>
+    </CardActions>
+  );
+};
+
+const ButtonContainer = () => {
+  const dispatch = useDispatch();
+  return (
+    <Stack justifyContent="center">
+      <Button
+        onClick={() => {
+          // console.log("workinggg......... add cart");
+          dispatch(
+            addToCart({
+              id: 1,
+              name: "string",
+              price: 500,
+              stocks: 21,
+              rattings: 5,
+              image: "string",
+              info: "string",
+              numOfReview: "55",
+            })
+          );
+        }}
+        variant="contained"
+        sx={{
+          textTransform: "none",
+          fontSize: {
+            xs: "45%",
+            sm: "50%",
+            md: "80%",
+          },
+          "&.MuiButton-root": {
+            backgroundColor: "#d62a15",
+            // width: "10px",
+          },
+        }}
+      >
+        <span>Add to Cart</span>
+      </Button>
+    </Stack>
+  );
+};
