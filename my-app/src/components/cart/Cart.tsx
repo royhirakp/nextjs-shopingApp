@@ -25,6 +25,7 @@ const Cart = () => {
       <Stack
         sx={{
           position: "fixed",
+          bgcolor: "azure",
           zIndex: "999",
 
           display: {
@@ -48,19 +49,12 @@ const Cart = () => {
         }}
       >
         <CartCard />
+
         <CartCard />
         <CartCard />
         <CartCard />
-        <CartCard /> <CartCard />
+
         <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard /> <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard />
-        <CartCard /> <CartCard /> <CartCard /> <CartCard /> <CartCard />
       </Box>
       <Box
         flex={2}
