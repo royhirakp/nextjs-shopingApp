@@ -34,6 +34,7 @@ interface MenuButtonAndLoGoProps {
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
   justifyContent: "space-between",
+  padding: "0",
 });
 
 const Search = styled("div")(({ theme }) => ({
@@ -170,60 +171,59 @@ const Header = () => {
       sx={{
         position: "fixed",
         zIndex: "999",
+        backgroundColor: "#416d6f",
         padding: {
-          xs: "0",
-          md: "0 10% 0 10%",
-          backgroundColor: "#416d6f",
+          xs: "2% 2% 0% 2%",
+          md: "1% 10% 0 10%",
         },
       }}
     >
-      <Stack>
-        {/* make this flexxx */}
-        <StyledToolbar>
-          <MenuButtonAndLoGo handelFunction={() => setOpen("left")} />
+      {/* <StyledToolbar> */}
+      <Stack direction="row" justifyContent="space-between">
+        <MenuButtonAndLoGo handelFunction={() => setOpen("left")} />
 
-          <Drawar
-            title="DAAA"
-            position="left"
-            open={open === "left"}
-            onClose={() => setOpen(null)}
-          >
-            <Box>
-              <Typography>Menu Buttons</Typography>
-              <Divider />
-              <Stack direction="column" alignItems="baseline">
-                {[
-                  "Electronics",
-                  "Flights",
-                  "Home appliences",
-                  "grocery",
-                  "Books",
-                ].map((item, i) => {
-                  return (
-                    <Button
-                      sx={{ textTransform: "none" }}
-                      variant="text"
-                      key={i * 0.25}
-                    >
-                      {item}
-                    </Button>
-                  );
-                })}
-              </Stack>
-            </Box>
-          </Drawar>
+        <Drawar
+          title="DAAA"
+          position="left"
+          open={open === "left"}
+          onClose={() => setOpen(null)}
+        >
           <Box>
-            <Typography
-              variant="h6"
-              sx={{ ...typoHeading1, display: { xs: "none", sm: "block" } }}
-            >
-              DAAA
-            </Typography>
+            <Typography>Menu Buttons</Typography>
+            <Divider />
+            <Stack direction="column" alignItems="baseline">
+              {[
+                "Electronics",
+                "Flights",
+                "Home appliences",
+                "grocery",
+                "Books",
+              ].map((item, i) => {
+                return (
+                  <Button
+                    sx={{ textTransform: "none" }}
+                    variant="text"
+                    key={i * 0.25}
+                  >
+                    {item}
+                  </Button>
+                );
+              })}
+            </Stack>
           </Box>
-          <SearchBar />
-          <ButtonsList />
-        </StyledToolbar>
+        </Drawar>
+        <Box>
+          <Typography
+            variant="h6"
+            sx={{ ...typoHeading1, display: { xs: "none", sm: "block" } }}
+          >
+            DAAA
+          </Typography>
+        </Box>
+        <SearchBar />
+        <ButtonsList />
       </Stack>
+      {/* </StyledToolbar> */}
     </AppBar>
   );
 };

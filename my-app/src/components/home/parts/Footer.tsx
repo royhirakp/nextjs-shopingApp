@@ -29,36 +29,47 @@ const footerData = [
 ];
 const Footer = () => {
   return (
-    <Stack
-      justifyContent="center"
-      pb={3}
+    <Box
       sx={{
         backgroundColor: "#416d6f",
-        flexDirection: "row",
-        color: "#ffff",
+
+        padding: {
+          xs: "1% 2% 2% 2%;",
+          md: "0 10% 0 10%",
+        },
       }}
     >
       <Stack
-        flex={3}
-        // direction="row"
+        justifyContent="center"
+        pb={3}
         sx={{
-          paddingLeft: {
-            xs: "3%",
-            sm: "3%",
-            lg: "10%",
-          },
-          flexDirection: {
-            xs: "column",
-            sm: "row",
-          },
+          backgroundColor: "#416d6f",
+          flexDirection: "row",
+          color: "#ffff",
         }}
       >
-        <FooterOptions />
+        <Stack
+          flex={3}
+          // direction="row"
+          sx={{
+            // paddingLeft: {
+            //   xs: "3%",
+            //   sm: "3%",
+            //   lg: "10%",
+            // },
+            flexDirection: {
+              xs: "column",
+              sm: "row",
+            },
+          }}
+        >
+          <FooterOptions />
+        </Stack>
+        <Stack flex={1}>
+          <FooterFollowButtonList />
+        </Stack>
       </Stack>
-      <Stack flex={1} pr="2%">
-        <FooterFollowButtonList />
-      </Stack>
-    </Stack>
+    </Box>
   );
 };
 export default Footer;

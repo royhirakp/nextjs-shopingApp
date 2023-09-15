@@ -15,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ width: "100vw" }} className={inter.className}>
+      <body
+        style={{ width: "100vw", backgroundColor: "azure" }}
+        className={inter.className}
+      >
         <StoreProvidor>{children}</StoreProvidor>
       </body>
     </html>

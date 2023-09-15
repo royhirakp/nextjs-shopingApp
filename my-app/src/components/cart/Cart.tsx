@@ -9,15 +9,18 @@ const Cart = () => {
     <Stack
       sx={{
         paddingTop: {
-          xs: "63px",
-          sm: "76px",
+          xs: "9px",
+          sm: "0px",
+        },
+        margin: {
+          xs: "0 1%",
+          sm: "0px 1%",
         },
         flexDirection: {
           xs: "column",
           md: "row",
         },
       }}
-      // direction={s}
     >
       <Stack
         sx={{
@@ -58,7 +61,7 @@ const Cart = () => {
         <CartCard />
         <CartCard />
         <CartCard /> <CartCard /> <CartCard /> <CartCard /> <CartCard />
-      </Box>{" "}
+      </Box>
       <Box
         flex={2}
         sx={{
