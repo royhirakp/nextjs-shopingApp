@@ -161,6 +161,7 @@ const MenuButtonAndLoGo: React.FC<MenuButtonAndLoGoProps> = ({
     </Box>
   );
 };
+
 const Header = () => {
   const [open, setOpen] = React.useState<
     "top" | "left" | "bottom" | "right" | null
